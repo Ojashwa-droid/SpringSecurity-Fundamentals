@@ -39,6 +39,7 @@ public class ProjectSecurityConfiguration {
 
         // This class allows our backend application to be able to read the csrf-token from the request header / parameter.
         CsrfTokenRequestAttributeHandler csrfTokenRequestAttributeHandler = new CsrfTokenRequestAttributeHandler();
+        csrfTokenRequestAttributeHandler.setCsrfRequestAttributeName("_csrf");
 
         http.securityContext(contextConfig -> contextConfig.requireExplicitSave(false))
                 // By this we are telling spring security to save the jsessionid cookie in the security context
